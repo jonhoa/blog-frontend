@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import './App.css'
 
 function App() {
   return (
@@ -11,6 +10,11 @@ function App() {
 
       <div id="posts-new">
         <h1>New post</h1>
+        <form >
+          <p>Title</p><input label= "Name" type = "input"></input>
+          <p>Body</p><input label= "body" type = "input"></input>
+          <p>Image</p><input label= "image" type = "input"></input>
+        </form>
       </div>
 
       <div id="posts-index">
