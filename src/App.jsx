@@ -1,14 +1,9 @@
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import reactLogo from './assets/react.svg';
+import Header from './Header';
+import Footer from './Footer';
 
-function Header() {
-  return (
-    <header>
-      <a href="#">Home</a> | <a href="#posts-index">All posts</a> | <a href="#posts-new">New post</a>
-    </header>
-  );
-}
 
 function PostsNew() {
   return (
@@ -57,14 +52,6 @@ function App() {
       <Footer/>
       <Content/>
     </div>
-  );
-}
-
-function Footer() {
-  return (
-    <footer>
-      <p>Copyright 20XX</p>
-    </footer>
   );
 }
 
