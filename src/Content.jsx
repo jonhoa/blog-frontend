@@ -2,7 +2,8 @@ import axios from 'axios';
 import { useState } from 'react';
 import { PostsIndex } from './PostsIndex';
 import { PostsNew } from "./PostsNew";
-import { UsersNew } from "./UsersNew";
+import { Signup } from "./Signup";
+import { Login } from "./Login";
 
 export function Content() {
   const [posts, setPosts] = useState([]);
@@ -14,10 +15,22 @@ export function Content() {
   };
   return (
     <div>
+      <br/>
+      <br/>
+      <hr/>
       <PostsNew />
-      <UsersNew />
+      <br/>
+      <br/>
+      <br/>
+      <hr/>
+      <Login/>
+      <br/>
+      <br/>
+      <hr/>
+      <Signup />
       <button onClick={handleIndexPosts}>Fetch Data</button>
       <PostsIndex posts={posts} />
     </div>
   );
 }
+
