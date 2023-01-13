@@ -4,6 +4,7 @@ import { PostsIndex } from './PostsIndex';
 import { PostsNew } from "./PostsNew";
 import { Signup } from "./Signup";
 import { Login } from "./Login";
+import { LogoutLink } from './LogoutLink';
 
 export function Content() {
   const [posts, setPosts] = useState([]);
@@ -24,6 +25,10 @@ export function Content() {
       <br/>
       <hr/>
       <Login/>
+      <br/>
+      <br/>
+      <hr/>
+      <LogoutLink/>
       <br/>
       <br/>
       <hr/>
