@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { PostsIndex } from './PostsIndex';
 import { PostsNew } from "./PostsNew";
 import { Signup } from "./Signup";
@@ -9,9 +9,18 @@ import { LogoutLink } from './LogoutLink';
 export function Content() {
   const [posts, setPosts] = useState([]);
   const handleIndexPosts = () => {
+    console.log("running handle posts");
     axios.get("http://localhost:3000/posts.json").then(response => {
       console.log(response.data);
       setPosts(response.data);
+      console.log(posts);
+    });
+  };
+  useEffect(handleIndexPosts, []);
+  const handleCreatePost = (params, successCallback) => {
+    console.log("handleCreatePost", params);
+    axios.post("http://localhost:3000/posts.json").then(response => {
+      setPosts([...posts, response.data]);
     });
   };
   return (
@@ -19,7 +28,7 @@ export function Content() {
       <br/>
       <br/>
       <hr/>
-      <PostsNew />
+      <PostsNew onCreatePost={handleCreatePost}/>
       <br/>
       <br/>
       <br/>
@@ -33,9 +42,11 @@ export function Content() {
       <br/>
       <hr/>
       <Signup />
+      <br/>
+      <br/>
+      <hr/>
       <button onClick={handleIndexPosts}>Fetch Data</button>
       <PostsIndex posts={posts} />
     </div>
   );
 }
-

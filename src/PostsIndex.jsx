@@ -1,9 +1,14 @@
 export function PostsIndex(props) {
-  console.log(props);
-  console.log(props.posts);
+  setTimeout(function() {
+    console.log(props.posts);
+  }, 2000);
   return (
-    <div id="posts-index">
-      <h1>All posts</h1>
+    <div id ="posts-index">
+      {props.posts.map(post =>(
+        <div>
+          <p>id{post.id}</p>
+        </div>
+      ))}
     </div>
   );
 }

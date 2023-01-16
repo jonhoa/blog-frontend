@@ -3,7 +3,9 @@ import reactLogo from './assets/react.svg';
 import Header from './Header';
 import Footer from './Footer';
 import { PostsIndex } from './PostsIndex';
+import axios from "axios";
 import { Content } from './Content';
+
 
 
 function App() {
